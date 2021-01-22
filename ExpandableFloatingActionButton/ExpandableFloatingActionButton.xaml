@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Frame xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       x:Class="ExpandableFloatingActionButton.ExpandableFloatingActionButton"
+       Padding="0"
+       HasShadow="False"
+       IsClippedToBounds="True"
+       x:Name="Root"
+       CornerRadius="26">
+    <StackLayout
+        Orientation="Horizontal"
+        InputTransparent="True"
+        Spacing="0"
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="CenterAndExpand">
+        <Grid
+            x:Name="ImageGrid"
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="Start">
+            <Image
+                HeightRequest="20"
+                Source="{Binding Path=Image, Source={x:Reference Root}}"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                WidthRequest="20" />
+        </Grid>
+        <Label
+            x:Name="TextLabel"
+            HorizontalOptions="FillAndExpand"
+            LineBreakMode="NoWrap"
+            FontAttributes="Bold"
+            HorizontalTextAlignment="Start"
+            VerticalOptions="CenterAndExpand"
+            TextColor="White"
+            Text="{Binding Path=Text, Source={x:Reference Root}}"
+            FontSize="15" />
+    </StackLayout>
+</Frame>
